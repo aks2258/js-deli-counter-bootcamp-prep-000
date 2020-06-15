@@ -21,11 +21,14 @@ function currentLine(list) {
     return "The line is currently empty."
   } else {
     var str = "The line is currently: "
-  if (katzDeliLine.length >0){
-    for (var i = 0; i < katzDeliLine.length; i++) {
-      arr.push((i+1) + ". " + katzDeliLine[i])
+    let place = 1
+    let index = 0
+    while (index < list.length) {
+      str += `${place}. ${list[index]}, `
+      place++
+      index++
       }
-    return line + arr.join(", ")
+      str = str.slice(0, -2)
     }
+    return str
   }
-}
